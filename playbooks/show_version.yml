@@ -1,7 +1,7 @@
 ---
 
 - name: Show current version of lab switches
-  hosts: all
+  hosts: DC1_L3_LEAVES
   gather_facts: no
 
   tasks:
