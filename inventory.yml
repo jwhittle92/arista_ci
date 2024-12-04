@@ -18,17 +18,24 @@ all:
     FABRIC:
       children:
         DC1:
+          vars:
+            ansible_connection: network_cli
+            ansible_user: arista
+            ansible_network_os: eos
+            ansible_become: yes
+            ansible_become_method: enable
+            ansible_python_interpreter: /usr/bin/python3          
           children:
             DC1_SPINES:
               hosts:
-                dc1-spine1:
-                dc1-spine2:
+                spine1:
+                spine2:
             DC1_L3_LEAVES:
               hosts:
-                dc1-leaf1a:
-                dc1-leaf1b:
-                dc1-leaf2a:
-                dc1-leaf2b:
+                leaf1:
+                leaf2:
+                leaf3:
+                leaf4:
             DC1_L2_LEAVES:
               hosts:
                 dc1-leaf1c:
