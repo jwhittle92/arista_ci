@@ -14,4 +14,4 @@
     - name: Print version number
       ansible.builtin.debug:
         msg:
-        - EOS version of "{{ inventory_hostname }}" is "{{ version["stdout_lines"][0][6] }}"
+        - The EOS version of "{{ inventory_hostname }}" is "{{ version["stdout_lines"][0][6] }}"
