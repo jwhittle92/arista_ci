@@ -1,0 +1,17 @@
+---
+
+- name: Show current version of lab switches
+  hosts: all
+  gather_facts: no
+
+  tasks:
+
+    - name: run show version on remote devices
+      arista.eos.eos_command:
+        commands: show version
+      register: version
+
+    - name: Print version number
+      ansible.builtin.debug:
+        msg:
+        - EOS version of "{{ inventory_hostname }}" is "{{ version["stdout_lines"][0][6] }}"
