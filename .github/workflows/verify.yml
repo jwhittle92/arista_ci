@@ -18,7 +18,9 @@ jobs:
         run: echo Checking EOS Version now!
 
       - name: install ansible
-        run: sudo apt install ansible
+        run: |
+          sudo apt install ansible
+          pip install ansible-pylibssh
 
       - name: show_version.yml
         run: ansible-playbook playbooks/show_version.yml
