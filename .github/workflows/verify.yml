@@ -17,5 +17,8 @@ jobs:
       - name: Print output
         run: echo Checking EOS Version now!
 
-      - name: show_vesion.yml
+      - name: install ansible
+        run: sudo apt install ansible
+
+      - name: show_version.yml
         run: ansible-playbook playbooks/show_version.yml
