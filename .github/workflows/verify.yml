@@ -20,7 +20,7 @@ jobs:
       - name: install ansible
         run: |
           sudo apt install ansible
-          pip install ansible-pylibssh
+          pip install anta[cli]
 
       - name: show_version.yml
         run: ansible-playbook playbooks/show_version.yml
